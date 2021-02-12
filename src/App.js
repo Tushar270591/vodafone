@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import { Provider } from "react-redux";
+// import { createStore } from "redux";
+// import rootReducer from "./reducers";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+import "./App.scss";
+import Gallery from "./pages/Gallery";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ProductDetails from "./pages/ProductDetails";
+
+// export const store = createStore(
+//   rootReducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
+
+class App extends Component {
+  render() {
+    return (
+    //   <Provider store={store}>
+        <BrowserRouter>
+          <React.Fragment>
+            <Header />
+            <Switch>
+              <Route
+                exact
+                path={"/"}
+                render={() => {
+                  return <Redirect to={"/gallery"} />;
+                }}
+              />{" "}
+              <Route exact path={"/gallery"} component={Gallery} />{" "}
+              <Route exact path={"/products/:id"} component={ProductDetails} />{" "}
+            </Switch>{" "}
+            <Footer />
+          </React.Fragment>{" "}
+        </BrowserRouter>
+    //   </Provider>
+    );
+  }
 }
 
 export default App;
