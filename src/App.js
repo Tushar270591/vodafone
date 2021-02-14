@@ -30,12 +30,12 @@ class App extends Component {
                 render={() => {
                   return <Redirect to={"/gallery"} />;
                 }}
-              />{" "}
-              <Route exact path={"/gallery"} component={Gallery} />{" "}
-              <Route exact path={"/products/:id"} component={ProductDetails} />{" "}
-            </Switch>{" "}
+              />
+              <Route exact path={"/gallery"} component={Gallery} />
+              <Route exact path={"/details/:id"} component={ProductDetails} />
+            </Switch>
             <Footer />
-          </React.Fragment>{" "}
+          </React.Fragment>
         </BrowserRouter>
     //   </Provider>
     );
