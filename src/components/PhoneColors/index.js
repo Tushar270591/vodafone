@@ -2,23 +2,29 @@ import React, { useState } from "react";
 
 const PhoneColors = (props) => {
   const { variants } = props;
-  // const [selectedVariant, setSelectedVariant] = useState(variants[0]);
-
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const changeColor = (i) => {
-    // setSelectedVariant(variants[i]);
+    setSelectedIndex(i);
     props.handleColorChange(i);
   };
 
   return (
-    <div>
+    <div className="phone-colors">
       {variants.map((elem, i) => (
         <div
+          key={i}
+          className={`phone-colors-container ${
+            selectedIndex === i ? "selected" : ""
+          }`}
           onClick={() => {
             changeColor(i);
           }}
         >
-          {elem.colour}
-          {elem.pricingOptions.length}
+          <div
+            className="phone-colors-circle"
+            style={{ backgroundColor: elem.colorCode }}
+          ></div>
+          <div className="phone-colors-name">{elem.colour}</div>
         </div>
       ))}
     </div>

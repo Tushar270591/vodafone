@@ -21,6 +21,8 @@ const theme = createMuiTheme({
   typography: {
     subtitle1: {
       fontSize: 24,
+      fontFamily:
+        "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',   Helvetica, Arial, 'Lucida Grande', sans-serif",
     },
     subtitle2: {
       fontSize: 16,

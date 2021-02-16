@@ -40,7 +40,7 @@ const ProductDetails = () => {
     <div className="product-detail">
       <div className="product-detail-top">
         <PhoneImages images={images}></PhoneImages>
-        <div>
+        <div className="product-detail-top-outer">
           <PhoneColors
             variants={variants}
             handleColorChange={handleColorChange}

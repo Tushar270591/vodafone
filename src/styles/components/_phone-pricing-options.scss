@@ -1,0 +1,16 @@
+.phone-pricing-options {
+  display: flex;
+  justify-content: space-between;
+  &-container {
+    text-align: center;
+    width: 30%;
+  }
+  &-container.selected {
+    border: 1px solid green;
+    font-weight: bold;
+  }
+  .one-time-price {
+    background: #333;
+    color: #fff;
+  }
+}

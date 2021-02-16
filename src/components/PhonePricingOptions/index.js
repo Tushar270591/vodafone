@@ -3,30 +3,33 @@ import React, { useState, useEffect } from "react";
 const PhonePricingOptions = (props) => {
   const { pricingOptions } = props;
   const [prices, setPrices] = useState([]);
-  console.log("pricingOptions", pricingOptions);
-  // const [selVariant, setSelVariant] = useState({});
-  // const [pricingOptions, setPricingOptions] = useState([]);
-  // console.log("selectedVariant", selectedVariant);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const changePricingOption = (i) => {
-    // setSelectedVariant(variants[i]);
-    // props.handleColorChange(i);
+    setSelectedIndex(i);
   };
   useEffect(() => {
     pricingOptions.price && setPrices(pricingOptions.price);
   }, [pricingOptions]);
-  // useEffect(() => {
-  //   selectedVariant.pricingOptions &&
-  //     setPricingOptions(selectedVariant.pricingOptions);
-  // }, [selectedVariant]);
   return (
-    <div>
+    <div className="phone-pricing-options">
       {prices.map((elem, i) => (
         <div
+          className={`phone-pricing-options-container ${
+            selectedIndex === i ? "selected" : ""
+          }`}
+          key={i}
           onClick={() => {
             changePricingOption(i);
           }}
         >
-          {elem.planName}
+          <div className="one-time-price">
+            {`Pay ${elem.phonePrice} for this phone`}
+          </div>
+          <div>{elem.planName}</div>
+          <div>{`${elem.currency} ${elem.planPrice}/month`}</div>
+          <div>{elem.dataAllowance}</div>
+          <div>{elem.freeExtra}</div>
+          <div>{elem.planName}</div>
         </div>
       ))}
     </div>

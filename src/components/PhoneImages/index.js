@@ -16,6 +16,7 @@ const PhoneImages = (props) => {
       <div className="phone-images-small">
         {images.map((img, i) => (
           <div
+            key={i}
             className="phone-images-small-image"
             onClick={() => {
               changeImage(i);

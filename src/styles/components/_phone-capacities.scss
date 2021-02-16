@@ -1,0 +1,22 @@
+.phone-capacities {
+  display: flex;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem;
+    border: 1px solid #999;
+    padding: 1rem;
+    width: 25%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  &-container.selected {
+    border: 1px solid green;
+    font-weight: bold;
+  }
+  &-name {
+  }
+}
