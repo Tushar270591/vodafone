@@ -1,12 +1,16 @@
 .product-detail {
-  padding: 5rem 20rem;
+  padding: $xl-size $xxl-size;
   position: absolute;
   top: 10vh;
   height: 84vh;
   left: 0;
-  background: #ebebeb;
+  background: $soft-grey;
   right: 0;
   overflow: auto;
+  &-name {
+    font-size: $l-size;
+    margin: $m-size 0;
+  }
   &-top {
     display: flex;
     height: 60vh;

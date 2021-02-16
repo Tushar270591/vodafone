@@ -21,14 +21,12 @@ const theme = createMuiTheme({
   typography: {
     subtitle1: {
       fontSize: 24,
-      fontFamily:
-        "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',   Helvetica, Arial, 'Lucida Grande', sans-serif",
+      fontFamily: "'Lato'",
     },
     subtitle2: {
       fontSize: 16,
       fontWeight: 900,
-      fontFamily:
-        "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',   Helvetica, Arial, 'Lucida Grande', sans-serif",
+      fontFamily: "'Lato'",
     },
     button: {
       fontStyle: "italic",
@@ -38,13 +36,11 @@ const theme = createMuiTheme({
 
 const store = createStore(rootReducer);
 ReactDOM.render(
-  // <React.StrictMode>
   <ThemeProvider theme={theme}>
     <Provider store={store}>
       <App />
     </Provider>
   </ThemeProvider>,
-  // </React.StrictMode>,
   document.getElementById("root")
 );
 

@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from "react";
 import { ReactComponent as Icon } from "../../assets/vodafone-icon.svg";
 const Header = () => {
   return (

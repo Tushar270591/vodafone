@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilters } from "../../store/actions";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -34,7 +34,6 @@ const Filter = (props) => {
         "Operation System": osValue,
       })
     );
-    // dispatch(setTestAction("test 2"))
     props.handleClose();
   };
 

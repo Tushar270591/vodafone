@@ -1,7 +1,4 @@
 const Filters = {
-  // const getValuesbyFilterType =  (data, filterType) => {
-  //   return
-  // },
   getUniqueValuesbyFilterType: (data, filterType) => {
     const valuesbyFilterType = data.map((product) => {
       let value = "";

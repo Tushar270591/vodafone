@@ -41,7 +41,7 @@ const ProductDetails = () => {
       <div className="product-detail-top">
         <PhoneImages images={images}></PhoneImages>
         <div className="product-detail-top-outer">
-          <div>{product.name}</div>
+          <div className="product-detail-name">{product.name}</div>
           <PhoneColors
             variants={variants}
             handleColorChange={handleColorChange}
@@ -57,7 +57,6 @@ const ProductDetails = () => {
           pricingOptions={pricingOptions}
         ></PhonePricingOptions>
       </div>
-      {/* <div className="container">{JSON.stringify(product)}</div> */}
     </div>
   );
 };

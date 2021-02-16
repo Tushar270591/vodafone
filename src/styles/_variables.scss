@@ -1,35 +1,13 @@
 // Colors
-$grey: #dddddd;
 $white: #ffffff;
-$blue-bt: #1e88e5;
-$blue-hv: #1565c0;
 $red-bt: #e60000;
-$red-hv: #e53935;
-$red-border: #d32f2f;
-$grey-bg: #eceff1;
 $dark-grey: #333;
-$soft-grey: #879095;
-$blue: #1c88bf;
-$soft-blue: #e8f3fc;
-$dark-blue: #364051;
-$off-white: #f7f7f7;
-$header-color: $dark-blue;
-$green-bt: #006857;
-$green-hv: #004a3c;
-$green-bg: #cddfd8;
-$green0: #6a9887;
-$green1: #006857;
-$whitesmoke: #f6f7f9;
-
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
+$grey: #999;
+$soft-grey: #ebebeb;
+$green: #428600;
 
 $box-shadow: 0px 4px 10px #88888740;
 
-// sampleStatus colors
-$status-grey: #fafafa;
-$status-orange: #ffdab6;
-$status-red: #ffb6b6;
 // Font Size
 $smallest-font-size: 1rem;
 $small-font-size: 1.2rem;
@@ -37,11 +15,15 @@ $default-font-size: 1.5rem;
 $large1-font-size: 1.8rem;
 $large2-font-size: 2.2rem;
 $large3-font-size: 4rem;
-$body-default-font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
 // Spacing
 $s-size: 1rem;
-$m-size: 1.5rem;
+$m-size: 2rem;
 $l-size: 3rem;
 $xl-size: 5rem;
 $desktop-breakpoint: 450px;
+$xxl-size: 20rem;
+
+//Border
+$grey-border: 1px solid $grey;
+$red-border: 1px solid $red-bt;

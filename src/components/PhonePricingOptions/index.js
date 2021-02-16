@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Button from "@material-ui/core/Button";
 
 const PhonePricingOptions = (props) => {
   const { pricingOptions } = props;
@@ -21,7 +20,7 @@ const PhonePricingOptions = (props) => {
           key={i}
         >
           <div className="one-time-price">
-            {`Pay ${elem.phonePrice} for this phone`}
+            {`Pay ${elem.currency} ${elem.phonePrice} for this phone`}
           </div>
           <div className="plan-name">{elem.planName}</div>
           <div className="monthly-price">{`${elem.currency} ${elem.planPrice}/month`}</div>

@@ -10,27 +10,8 @@ html {
 
 body {
   color: $dark-grey;
-  font-family: $body-default-font-family;
+  font-family: "Lato";
   font-size: $default-font-size;
   line-height: 1.6;
-  letter-spacing: 1px;;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: default;
-}
-
-.is-active {
-  font-weight: bold;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'],
-textarea {
-  border: 0px solid $grey;
+  letter-spacing: 1px;
 }

@@ -38,7 +38,7 @@ const PhoneCard = (props) => {
   useEffect(() => {
     const checkOutOfStock = () => {
       loop1: for (var variant of variants) {
-        loop2: for (var pricingOption of variant.pricingOptions) {
+        for (var pricingOption of variant.pricingOptions) {
           if (!pricingOption.outOfStock) {
             setIsOutOfStock(false);
             break loop1;
@@ -53,6 +53,7 @@ const PhoneCard = (props) => {
     <div className="phone-card">
       <Card className={classes.root} onClick={handleClick} elevation={3}>
         <CardActionArea className={classes.actionArea}>
+          {isOutOfStock && <div className="phone-card-oos">Out of Stock</div>}
           <CardMedia
             className={classes.media}
             image={variants[0].phoneImages[0]}
@@ -67,8 +68,6 @@ const PhoneCard = (props) => {
             <Typography gutterBottom variant="subtitle2" component="div">
               {planPrice} {planName}
             </Typography>
-
-            {`isOutOfStock ${isOutOfStock}`}
           </CardContent>
         </CardActionArea>
       </Card>

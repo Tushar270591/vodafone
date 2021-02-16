@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import * as actions from "../types";
 
 export const setFilters = (filters) => ({

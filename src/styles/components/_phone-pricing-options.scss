@@ -9,45 +9,45 @@
   }
 
   .one-time-price {
-    background: #333;
-    padding: 1rem;
-    font-size: 2rem;
-    color: #fff;
+    background: $dark-grey;
+    padding: $s-size;
+    font-size: $m-size;
+    color: $white;
   }
   .plan-name {
-    padding: 1rem;
-    font-size: 3rem;
+    padding: $s-size;
+    font-size: $l-size;
   }
   .monthly-price {
-    padding: 1rem;
-    font-size: 2rem;
+    padding: $s-size;
+    font-size: $m-size;
   }
   .select {
-    padding: 1rem;
-    font-size: 2rem;
-    background: grey;
-    color: white;
+    padding: $s-size;
+    font-size: $m-size;
+    background: $grey;
+    color: $white;
     cursor: pointer;
   }
   .select.active {
-    padding: 1rem;
-    font-size: 2rem;
-    background: #428600;
+    padding: $s-size;
+    font-size: $m-size;
+    background: $green;
     cursor: pointer;
   }
   .features {
     display: flex;
-    font-size: 2rem;
+    font-size: $m-size;
     color: $red-bt;
-    margin: 2rem 0;
+    margin: $m-size 0;
 
     > div {
       width: 50%;
-      padding: 1rem;
+      padding: $s-size;
     }
     > div:first-child {
       background: $red-bt;
-      color: #fff;
+      color: $white;
       display: flex;
       align-items: center;
       justify-content: center;

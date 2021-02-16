@@ -4,4 +4,12 @@
     display: flex;
     flex-wrap: wrap;
   }
+  &-oos {
+    position: absolute;
+    right: $s-size;
+    top: 0;
+    color: $white;
+    padding: $s-size;
+    background: $red-bt;
+  }
 }

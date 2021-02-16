@@ -1,4 +1,4 @@
-const get = (endpoint: string, params?: {}) => fetch(endpoint, params);
+const get = (endpoint, params) => fetch(endpoint, params);
 
 const Network = {
   get,
