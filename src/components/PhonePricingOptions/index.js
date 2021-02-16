@@ -20,7 +20,9 @@ const PhonePricingOptions = (props) => {
           key={i}
         >
           <div className="one-time-price">
-            {`Pay ${elem.currency} ${elem.phonePrice} for this phone`}
+            {elem.phonePrice === "Free"
+              ? "FREE"
+              : `Pay ${elem.currency} ${elem.phonePrice} for this phone`}
           </div>
           <div className="plan-name">{elem.planName}</div>
           <div className="monthly-price">{`${elem.currency} ${elem.planPrice}/month`}</div>

@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
 const PhoneCard = (props) => {
   const classes = useStyles();
   const { name, id, variants, initialPhonePrice, initialPlan } = props;
-  const { value: phonePrice } = initialPhonePrice;
-  const { planPrice, planName } = initialPlan;
+  const { currency, value: phonePrice } = initialPhonePrice;
+  const { planPrice, planName, currency: planCurrency } = initialPlan;
   const [isOutOfStock, setIsOutOfStock] = useState(true);
   let history = useHistory();
 
@@ -57,16 +57,18 @@ const PhoneCard = (props) => {
           <CardMedia
             className={classes.media}
             image={variants[0].phoneImages[0]}
+            alt={name}
+            title={name}
           />
           <CardContent>
             <Typography gutterBottom variant="subtitle1" component="div">
               {name}
             </Typography>
             <Typography gutterBottom variant="subtitle2" component="div">
-              {phonePrice}
+              {phonePrice === "0.00" ? "FREE" : `${currency} ${phonePrice}`}
             </Typography>
             <Typography gutterBottom variant="subtitle2" component="div">
-              {planPrice} {planName}
+              {planCurrency} {planPrice}/month on {planName}
             </Typography>
           </CardContent>
         </CardActionArea>
