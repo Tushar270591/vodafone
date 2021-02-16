@@ -7,7 +7,7 @@ const authConfig = {
 };
 
 const urls = {
-  getData: "./phones.json",
+  getData: "/phones.json",
 };
 const PhonesData = {
   getData: () =>
@@ -37,7 +37,7 @@ const PhonesData = {
         let isFiltered = false;
         product.specifications.forEach((spec) => {
           if (spec.name === "Operation System") {
-              isFiltered = !filterParams["Operation System"] || filterParams["Operation System"].indexOf(spec.value) !== -1;
+              isFiltered = filterParams["Operation System"].length === 0 || filterParams["Operation System"].indexOf(spec.value) !== -1;
           }
         });
         return isFiltered;

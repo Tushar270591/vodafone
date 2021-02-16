@@ -1,45 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setTestAction, setFilters } from "../../store/actions";
-import { makeStyles } from "@material-ui/core/styles";
+import { setFilters } from "../../store/actions";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 160,
-    width: 135,
-    backgroundSize: "135px 160px",
-  },
-});
 const Filter = (props) => {
   const dispatch = useDispatch();
   const storeData = useSelector((state) => state.reducer);
-  const [value, setValue] = useState(storeData.filters.Brand);
+  const [brandValue, setBrandValue] = useState(storeData.filters.Brand);
+  const [osValue, setOSValue] = useState(storeData.filters["Operation System"]);
 
-  useEffect(() => {
-    
-  }, [dispatch]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleBrandChange = (event, newValue) => {
+    setBrandValue(newValue);
+  };
+  const handleOSChange = (event, newValue) => {
+    setOSValue(newValue);
   };
 
   const handleClose = () => {
-    setValue(storeData.filters.Brand);
+    setBrandValue(storeData.filters.Brand);
+    setOSValue(storeData.filters["Operation System"]);
     props.handleClose();
   };
   const handleApply = async () => {
-    dispatch(setFilters({'Brand' : value}));
+    dispatch(
+      setFilters({
+        Brand: brandValue,
+        "Operation System": osValue,
+      })
+    );
     // dispatch(setTestAction("test 2"))
     props.handleClose();
   };
@@ -53,36 +47,37 @@ const Filter = (props) => {
     >
       <DialogTitle id="form-dialog-title">Select Filters</DialogTitle>
       <DialogContent>
-      <Autocomplete
-        multiple
-        value={value}
-        onChange={handleChange}
-        id="controllable-states-demo"
-        options={props['Brand']}
-        style={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Brand" variant="standard" />}
-      />
-        {/* <Autocomplete
+        <Autocomplete
           multiple
-          id="tags-standard"
-          options={props['Brand']}
-          getOptionLabel={(option) => option}
-          onChange={handleChange}
+          value={brandValue}
+          onChange={handleBrandChange}
+          options={props["Brand"]}
+          style={{ width: 300 }}
+          renderInput={(params) => (
+            <TextField {...params} label="Brand" variant="standard" />
+          )}
+        />
+        <Autocomplete
+          multiple
+          value={osValue}
+          onChange={handleOSChange}
+          id="controllable-states-demo"
+          options={props["Operation System"]}
+          style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
+              label="Operating System"
               variant="standard"
-              label="Brand"
-              placeholder="Select Brand"
             />
           )}
-        /> */}
+        />
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={handleApply} color="primary">
+        <Button onClick={handleApply} color="primary" variant="contained">
           Apply
         </Button>
       </DialogActions>

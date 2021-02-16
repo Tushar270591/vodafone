@@ -7,10 +7,10 @@ const appReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === actions.TEST_ACTION) {
-    // eslint-disable-next-line no-param-reassign
-    state = undefined;
-  }
+  // if (action.type === actions.TEST_ACTION) {
+  //   // eslint-disable-next-line no-param-reassign
+  //   state = undefined;
+  // }
 
   return appReducer(state, action);
 };

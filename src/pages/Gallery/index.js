@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { setPage } from "../../store/actions";
 import PhoneCard from "../../components/PhoneCard";
 import Pagination from "@material-ui/lab/Pagination";
 import Button from "@material-ui/core/Button";
@@ -16,15 +17,17 @@ const Gallery = (props) => {
       margin: theme.spacing(1),
     },
   }));
+  const dispatch = useDispatch();
   const storeData = useSelector((state) => state.reducer);
   const classes = useStyles();
   const [products, setProducts] = useState([]);
-  const [page, setPage] = React.useState(1);
+  const [page, setPageNo] = React.useState(storeData.page);
   const phonesPerPage = 9;
   const [totalPages, setTotalPages] = React.useState(0);
   const [uniqueValuesForFilters, setUniqueValuesForFilters] = useState({});
   const handleChange = (event, value) => {
-    setPage(value);
+    dispatch(setPage(value))
+    setPageNo(value);
   };
 
   const [open, setOpen] = React.useState(false);
@@ -48,14 +51,18 @@ const Gallery = (props) => {
       if (Object.keys(storeData.filters).length > 0) {
         products = PhonesData.getFilteredData(products, storeData.filters);
       }
-      setTotalPages(Math.ceil(products.length / phonesPerPage));
-
-      const paginatedData = PhonesData.getPaginatedData(products, page);
+      const totalPages = Math.ceil(products.length / phonesPerPage);
+      setTotalPages(totalPages);
+      if(totalPages === 1){
+        dispatch(setPage(1))
+      }
+        
+      const paginatedData = PhonesData.getPaginatedData(products, storeData.page);
       setProducts(paginatedData);
     };
 
     getPhonesData();
-  }, [storeData.filters,storeData.filters.Brand, page]);
+  }, [dispatch, storeData.filters, storeData.filters.Brand, storeData.page]);
 
   useEffect(() => {
     const getUniqueValuesForFilters = async () => {
