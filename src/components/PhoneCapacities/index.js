@@ -14,20 +14,23 @@ const PhoneCapacities = (props) => {
       setPricingOptions(selectedVariant.pricingOptions);
   }, [selectedVariant]);
   return (
-    <div className="phone-capacities">
-      {pricingOptions.map((elem, i) => (
-        <div
-          key={i}
-          className={`phone-capacities-container ${
-            selectedIndex === i ? "selected" : ""
-          }`}
-          onClick={() => {
-            handleCapacityChange(i);
-          }}
-        >
-          <div className="phone-capacities-name">{elem.capacity}</div>
-        </div>
-      ))}
+    <div>
+      <div>Choose capacity</div>
+      <div className="phone-capacities">
+        {pricingOptions.map((elem, i) => (
+          <div
+            key={i}
+            className={`phone-capacities-container ${
+              selectedIndex === i ? "selected" : ""
+            }`}
+            onClick={() => {
+              handleCapacityChange(i);
+            }}
+          >
+            <div className="phone-capacities-name">{elem.capacity}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

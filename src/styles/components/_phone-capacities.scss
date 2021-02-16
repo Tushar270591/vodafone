@@ -9,12 +9,13 @@
     margin: 1rem;
     border: 1px solid #999;
     padding: 1rem;
+    background: $white;
     width: 25%;
     border-radius: 5px;
     cursor: pointer;
   }
   &-container.selected {
-    border: 1px solid green;
+    border: 1px solid $red-bt;
     font-weight: bold;
   }
   &-name {

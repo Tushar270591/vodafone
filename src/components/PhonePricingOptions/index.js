@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Button from "@material-ui/core/Button";
 
 const PhonePricingOptions = (props) => {
   const { pricingOptions } = props;
   const [prices, setPrices] = useState([]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const changePricingOption = (i) => {
     setSelectedIndex(i);
   };
@@ -18,18 +19,24 @@ const PhonePricingOptions = (props) => {
             selectedIndex === i ? "selected" : ""
           }`}
           key={i}
-          onClick={() => {
-            changePricingOption(i);
-          }}
         >
           <div className="one-time-price">
             {`Pay ${elem.phonePrice} for this phone`}
           </div>
-          <div>{elem.planName}</div>
-          <div>{`${elem.currency} ${elem.planPrice}/month`}</div>
-          <div>{elem.dataAllowance}</div>
-          <div>{elem.freeExtra}</div>
-          <div>{elem.planName}</div>
+          <div className="plan-name">{elem.planName}</div>
+          <div className="monthly-price">{`${elem.currency} ${elem.planPrice}/month`}</div>
+          <div className="features">
+            <div>{elem.dataAllowance}</div>
+            <div>{elem.freeExtra}</div>
+          </div>
+          <div
+            onClick={() => {
+              changePricingOption(i);
+            }}
+            className={`select ${selectedIndex === i ? "active" : ""}`}
+          >
+            <div>{selectedIndex === i ? "Selected" : "Select"}</div>
+          </div>
         </div>
       ))}
     </div>

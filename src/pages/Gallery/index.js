@@ -14,6 +14,7 @@ const Gallery = (props) => {
   const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
+      fontSize: "1.5rem",
     },
   }));
   const dispatch = useDispatch();
@@ -82,6 +83,7 @@ const Gallery = (props) => {
     <div className="gallery">
       <Button
         variant="outlined"
+        size="large"
         onClick={handleClickOpen}
         className={classes.button}
         startIcon={<FilterIcon />}

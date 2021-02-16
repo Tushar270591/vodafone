@@ -27,6 +27,8 @@ const theme = createMuiTheme({
     subtitle2: {
       fontSize: 16,
       fontWeight: 900,
+      fontFamily:
+        "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',   Helvetica, Arial, 'Lucida Grande', sans-serif",
     },
     button: {
       fontStyle: "italic",

@@ -4,13 +4,54 @@
   &-container {
     text-align: center;
     width: 30%;
+    box-shadow: $box-shadow;
+    background: $white;
   }
-  &-container.selected {
-    border: 1px solid green;
-    font-weight: bold;
-  }
+
   .one-time-price {
     background: #333;
+    padding: 1rem;
+    font-size: 2rem;
     color: #fff;
+  }
+  .plan-name {
+    padding: 1rem;
+    font-size: 3rem;
+  }
+  .monthly-price {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  .select {
+    padding: 1rem;
+    font-size: 2rem;
+    background: grey;
+    color: white;
+    cursor: pointer;
+  }
+  .select.active {
+    padding: 1rem;
+    font-size: 2rem;
+    background: #428600;
+    cursor: pointer;
+  }
+  .features {
+    display: flex;
+    font-size: 2rem;
+    color: $red-bt;
+    margin: 2rem 0;
+
+    > div {
+      width: 50%;
+      padding: 1rem;
+    }
+    > div:first-child {
+      background: $red-bt;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
   }
 }

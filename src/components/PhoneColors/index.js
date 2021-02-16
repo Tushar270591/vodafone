@@ -9,24 +9,27 @@ const PhoneColors = (props) => {
   };
 
   return (
-    <div className="phone-colors">
-      {variants.map((elem, i) => (
-        <div
-          key={i}
-          className={`phone-colors-container ${
-            selectedIndex === i ? "selected" : ""
-          }`}
-          onClick={() => {
-            changeColor(i);
-          }}
-        >
+    <div>
+      <div>Choose Color</div>
+      <div className="phone-colors">
+        {variants.map((elem, i) => (
           <div
-            className="phone-colors-circle"
-            style={{ backgroundColor: elem.colorCode }}
-          ></div>
-          <div className="phone-colors-name">{elem.colour}</div>
-        </div>
-      ))}
+            key={i}
+            className={`phone-colors-container ${
+              selectedIndex === i ? "selected" : ""
+            }`}
+            onClick={() => {
+              changeColor(i);
+            }}
+          >
+            <div
+              className="phone-colors-circle"
+              style={{ backgroundColor: elem.colorCode }}
+            ></div>
+            <div className="phone-colors-name">{elem.colour}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
