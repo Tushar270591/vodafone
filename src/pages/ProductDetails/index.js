@@ -37,21 +37,27 @@ const ProductDetails = () => {
     setPricingOptions(selectedVariant.pricingOptions[i]);
   };
   return (
-    <>
-      <PhoneImages images={images}></PhoneImages>
-      <PhoneColors
-        variants={variants}
-        handleColorChange={handleColorChange}
-      ></PhoneColors>
-      <PhoneCapacities
-        selectedVariant={selectedVariant}
-        handleCapacityChange={handleCapacityChange}
-      ></PhoneCapacities>
-      <PhonePricingOptions
-        pricingOptions={pricingOptions}
-      ></PhonePricingOptions>
+    <div className="product-detail">
+      <div className="product-detail-top">
+        <PhoneImages images={images}></PhoneImages>
+        <div>
+          <PhoneColors
+            variants={variants}
+            handleColorChange={handleColorChange}
+          ></PhoneColors>
+          <PhoneCapacities
+            selectedVariant={selectedVariant}
+            handleCapacityChange={handleCapacityChange}
+          ></PhoneCapacities>
+        </div>
+      </div>
+      <div className="product-detail-middle">
+        <PhonePricingOptions
+          pricingOptions={pricingOptions}
+        ></PhonePricingOptions>
+      </div>
       {/* <div className="container">{JSON.stringify(product)}</div> */}
-    </>
+    </div>
   );
 };
 

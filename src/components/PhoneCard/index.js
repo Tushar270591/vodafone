@@ -7,31 +7,31 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    margin: theme.spacing(1),
+  },
+  actionArea: {
+    display: "flex",
+    padding: theme.spacing(2),
+    height: "25rem",
+    justifyContent: "space-between",
   },
   media: {
     height: 160,
     width: 135,
     backgroundSize: "135px 160px",
   },
-});
+}));
 const PhoneCard = (props) => {
   const classes = useStyles();
   const { name, id, variants, initialPhonePrice, initialPlan } = props;
-  // const { } = props;
   const { value: phonePrice } = initialPhonePrice;
   const { planPrice, planName } = initialPlan;
-  // const {pricingOptions} = variants;
   const [isOutOfStock, setIsOutOfStock] = useState(true);
   let history = useHistory();
 
   const handleClick = () => {
-    history.push(`/details/${id}`);
-  };
-
-  const handleVariantClick = (event) => {
     history.push(`/details/${id}`);
   };
 
@@ -47,31 +47,32 @@ const PhoneCard = (props) => {
       }
     };
     checkOutOfStock();
-  }, []);
+  }, [variants]);
 
   return (
-    <Card className={classes.root} onClick={handleClick}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={variants[0].phoneImages[0]}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {name}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
-            {phonePrice}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
-            {planPrice} {planName}
-          </Typography>
-          
-          {`isOutOfStock ${isOutOfStock}`}
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <div className="phone-card">
+      <Card className={classes.root} onClick={handleClick} elevation={3}>
+        <CardActionArea className={classes.actionArea}>
+          <CardMedia
+            className={classes.media}
+            image={variants[0].phoneImages[0]}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="subtitle1" component="div">
+              {name}
+            </Typography>
+            <Typography gutterBottom variant="subtitle2" component="div">
+              {phonePrice}
+            </Typography>
+            <Typography gutterBottom variant="subtitle2" component="div">
+              {planPrice} {planName}
+            </Typography>
+
+            {`isOutOfStock ${isOutOfStock}`}
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </div>
   );
 };
 export default PhoneCard;

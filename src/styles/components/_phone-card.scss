@@ -1,0 +1,7 @@
+.phone-card {
+  width: 33%;
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

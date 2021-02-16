@@ -1,13 +1,11 @@
 // import React from 'react';
-
+import { ReactComponent as Icon } from "../../assets/vodafone-icon.svg";
 const Header = () => {
-    return (
-        <footer className="py-5 bg-dark">
-            <div className="container">
-                <p className="m-0 text-center text-white">header</p>
-            </div>
-        </footer>
-    );
+  return (
+    <header className="header">
+      <Icon height={60} width={60} />
+    </header>
+  );
 };
 
 export default Header;

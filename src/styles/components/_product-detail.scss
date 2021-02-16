@@ -1,0 +1,10 @@
+.product-detail {
+  padding: 5rem 10rem;
+  position: fixed;
+  top: 10vh;
+  height: 84vh;
+  overflow: auto;
+  &-top {
+    display: flex;
+  }
+}

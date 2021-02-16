@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  color: $dark-grey;
+  font-family: $body-default-font-family;
+  font-size: $default-font-size;
+  line-height: 1.6;
+  letter-spacing: 1px;;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  border: 0px solid $grey;
+}

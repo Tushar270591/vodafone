@@ -9,7 +9,6 @@ import FilterIcon from "@material-ui/icons/FilterList";
 import PhonesData from "../../services/PhonesData";
 import Filters from "../../services/Filters";
 import Filter from "../../components/Filter";
-import "./Gallery.scss";
 
 const Gallery = (props) => {
   const useStyles = makeStyles((theme) => ({

@@ -12,17 +12,22 @@ const PhoneImages = (props) => {
   };
 
   return (
-    <div>
-      {images.map((img, i) => (
-        <div
-          onClick={() => {
-            changeImage(i);
-          }}
-        >
-          <img alt="test" src={img} />
-        </div>
-      ))}
-      <img alt="test" src={selectedImage} />
+    <div className="phone-images">
+      <div className="phone-images-small">
+        {images.map((img, i) => (
+          <div
+            className="phone-images-small-image"
+            onClick={() => {
+              changeImage(i);
+            }}
+          >
+            <img alt="test" src={img} />
+          </div>
+        ))}
+      </div>
+      <div className="phone-images-big">
+        <img alt="test" src={selectedImage} />
+      </div>
     </div>
   );
 };

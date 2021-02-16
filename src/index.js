@@ -1,28 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux'
-import './index.css';
-import App from './App';
-import {createStore} from 'redux';
-import rootReducer from './store/reducers';
-import { createMuiTheme, ThemeProvider  } from '@material-ui/core/styles';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import "../src/styles/index.scss";
+import App from "./App";
+import { createStore } from "redux";
+import rootReducer from "./store/reducers";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import reportWebVitals from "./reportWebVitals";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#e60000',
+      main: "#e60000",
     },
     secondary: {
-      main: '#e60000',
-      light: '#e60000',
+      main: "#e60000",
+      light: "#e60000",
+    },
+  },
+  typography: {
+    subtitle1: {
+      fontSize: 24,
+    },
+    subtitle2: {
+      fontSize: 16,
+      fontWeight: 900,
+    },
+    button: {
+      fontStyle: "italic",
     },
   },
 });
 
-const store = createStore(
-  rootReducer
-);
+const store = createStore(rootReducer);
 ReactDOM.render(
   // <React.StrictMode>
   <ThemeProvider theme={theme}>
@@ -31,7 +41,7 @@ ReactDOM.render(
     </Provider>
   </ThemeProvider>,
   // </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

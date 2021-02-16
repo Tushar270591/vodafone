@@ -1,0 +1,34 @@
+.phone-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &-small {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+
+    &-image {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 10px;
+      border: 1px solid grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 70%;
+      }
+    }
+  }
+  &-big {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      height: 60%;
+    }
+  }
+}

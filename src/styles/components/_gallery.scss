@@ -1,0 +1,11 @@
+.gallery {
+  padding: 5rem 10rem;
+  position: fixed;
+  top: 10vh;
+  height: 84vh;
+  overflow: auto;
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
