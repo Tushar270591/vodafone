@@ -19,25 +19,25 @@ import ProductDetails from "./pages/ProductDetails";
 class App extends Component {
   render() {
     return (
-    //   <Provider store={store}>
-        <BrowserRouter>
-          <React.Fragment>
-            <Header />
-            <Switch>
-              <Route
-                exact
-                path={"/"}
-                render={() => {
-                  return <Redirect to={"/gallery"} />;
-                }}
-              />
-              <Route exact path={"/gallery"} component={Gallery} />
-              <Route exact path={"/details/:id"} component={ProductDetails} />
-            </Switch>
-            <Footer />
-          </React.Fragment>
-        </BrowserRouter>
-    //   </Provider>
+      //   <Provider store={store}>
+      <BrowserRouter>
+        <React.Fragment>
+          <Header />
+          <Switch>
+            <Route
+              exact
+              path={"/"}
+              render={() => {
+                return <Redirect to={"/gallery"} />;
+              }}
+            />
+            <Route exact path={"/gallery"} component={Gallery} />
+            <Route exact path={"/details/:id"} component={ProductDetails} />
+          </Switch>
+          <Footer />
+        </React.Fragment>
+      </BrowserRouter>
+      //   </Provider>
     );
   }
 }

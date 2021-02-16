@@ -1,7 +1,7 @@
-const get = (endpoint: string, params?: {}) => fetch(endpoint, params)
+const get = (endpoint: string, params?: {}) => fetch(endpoint, params);
 
 const Network = {
-    get
-}
+  get,
+};
 
 export default Network;

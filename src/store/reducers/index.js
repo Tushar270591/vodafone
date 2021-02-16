@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux';
-import * as actions from '../types';
-import reducer from './reducer';
+import { combineReducers } from "redux";
+import * as actions from "../types";
+import reducer from "./reducer";
 
 const appReducer = combineReducers({
   reducer,

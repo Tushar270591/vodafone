@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import * as actions from '../types';
+import * as actions from "../types";
 
 export const setFilters = (filters) => ({
   type: actions.APPLY_FILTERS,

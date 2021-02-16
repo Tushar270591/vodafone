@@ -26,7 +26,7 @@ const Gallery = (props) => {
   const [totalPages, setTotalPages] = React.useState(0);
   const [uniqueValuesForFilters, setUniqueValuesForFilters] = useState({});
   const handleChange = (event, value) => {
-    dispatch(setPage(value))
+    dispatch(setPage(value));
     setPageNo(value);
   };
 
@@ -41,10 +41,6 @@ const Gallery = (props) => {
   };
 
   useEffect(() => {
-    console.log(storeData.testAction)
-  }, [storeData.testAction]);
-
-  useEffect(() => {
     const getPhonesData = async () => {
       const response = await PhonesData.getData();
       let { products } = await response.json();
@@ -53,11 +49,14 @@ const Gallery = (props) => {
       }
       const totalPages = Math.ceil(products.length / phonesPerPage);
       setTotalPages(totalPages);
-      if(totalPages === 1){
-        dispatch(setPage(1))
+      if (totalPages === 1) {
+        dispatch(setPage(1));
       }
-        
-      const paginatedData = PhonesData.getPaginatedData(products, storeData.page);
+
+      const paginatedData = PhonesData.getPaginatedData(
+        products,
+        storeData.page
+      );
       setProducts(paginatedData);
     };
 
@@ -103,6 +102,6 @@ const Gallery = (props) => {
       <Pagination count={totalPages} page={page} onChange={handleChange} />
     </div>
   );
-}
+};
 
 export default Gallery;

@@ -24,20 +24,25 @@ const PhonesData = {
   },
 
   getFilteredData: (data, filterParams) => {
-    return data.filter((product) => {
-        
-      let isFiltered = false;
-      product.specifications.forEach((spec) => {
-        if (spec.name === "Brand") {
-            isFiltered = filterParams["Brand"].length === 0 || filterParams["Brand"].indexOf(spec.value) !== -1;
-        }
-      });
-      return isFiltered;
-    }).filter((product) => {
+    return data
+      .filter((product) => {
+        let isFiltered = false;
+        product.specifications.forEach((spec) => {
+          if (spec.name === "Brand") {
+            isFiltered =
+              filterParams["Brand"].length === 0 ||
+              filterParams["Brand"].indexOf(spec.value) !== -1;
+          }
+        });
+        return isFiltered;
+      })
+      .filter((product) => {
         let isFiltered = false;
         product.specifications.forEach((spec) => {
           if (spec.name === "Operation System") {
-              isFiltered = filterParams["Operation System"].length === 0 || filterParams["Operation System"].indexOf(spec.value) !== -1;
+            isFiltered =
+              filterParams["Operation System"].length === 0 ||
+              filterParams["Operation System"].indexOf(spec.value) !== -1;
           }
         });
         return isFiltered;

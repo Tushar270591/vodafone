@@ -1,9 +1,9 @@
-import * as actions from '../types';
+import * as actions from "../types";
 
 export const INITIAL_STATE = {
   filters: {
-    'Brand' : [],
-    'Operation System': []
+    Brand: [],
+    "Operation System": [],
   },
   page: 1,
 };
@@ -13,7 +13,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case actions.APPLY_FILTERS:
       return {
         ...state,
-        filters: {...action.filters,}
+        filters: { ...action.filters },
       };
     case actions.SET_PAGE:
       return {
