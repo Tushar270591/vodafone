@@ -14,3 +14,8 @@ export const setPage = (page) => ({
   type: actions.SET_PAGE,
   page,
 });
+
+export const setSortBy = (sortBy) => ({
+  type: actions.SET_SORT_BY,
+  sortBy,
+});

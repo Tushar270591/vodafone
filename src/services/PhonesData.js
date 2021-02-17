@@ -48,6 +48,36 @@ const PhonesData = {
         return isFiltered;
       });
   },
+  getSortedData: (data, sortBy) => {
+    return data.sort(function (a, b) {
+      if (sortBy === 1) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+      }
+      if (sortBy === 2) {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+      }
+      if (sortBy === 0) {
+        if (a.catalogPriority > b.catalogPriority) {
+          return -1;
+        }
+        if (a.catalogPriority < b.catalogPriority) {
+          return 1;
+        }
+      }
+
+      return 0;
+    });
+  },
 };
 
 export default PhonesData;

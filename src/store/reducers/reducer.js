@@ -7,6 +7,7 @@ export const INITIAL_STATE = {
   },
   phonesJson: [],
   page: 1,
+  sortBy: 0,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -25,6 +26,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         page: action.page,
+      };
+    case actions.SET_SORT_BY:
+      return {
+        ...state,
+        sortBy: action.sortBy,
       };
     default:
       return state;
