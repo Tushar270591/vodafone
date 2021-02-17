@@ -6,6 +6,7 @@ const PhonePricingOptions = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const changePricingOption = (i) => {
     setSelectedIndex(i);
+    props.handlePricingChange(i);
   };
   useEffect(() => {
     pricingOptions.price && setPrices(pricingOptions.price);

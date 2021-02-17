@@ -22,7 +22,7 @@ const PhoneCapacities = (props) => {
             key={i}
             className={`phone-capacities-container ${
               selectedIndex === i ? "selected" : ""
-            }`}
+            } ${elem.outOfStock ? "oos" : ""}`}
             onClick={() => {
               handleCapacityChange(i);
             }}

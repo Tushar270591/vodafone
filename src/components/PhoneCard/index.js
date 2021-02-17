@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,13 +27,16 @@ const PhoneCard = (props) => {
   const { name, id, variants, initialPhonePrice, initialPlan } = props;
   const { currency, value: phonePrice } = initialPhonePrice;
   const { planPrice, planName, currency: planCurrency } = initialPlan;
+  const [imageSrc, setImageSrc] = useState(variants[0].phoneImages[0]);
   const [isOutOfStock, setIsOutOfStock] = useState(true);
   let history = useHistory();
 
   const handleClick = () => {
     history.push(`/details/${id}`);
   };
-
+  const handleError = () => {
+    setImageSrc(variants[0].phoneImages[1]);
+  };
   useEffect(() => {
     const checkOutOfStock = () => {
       loop1: for (var variant of variants) {
@@ -54,11 +56,13 @@ const PhoneCard = (props) => {
       <Card className={classes.root} onClick={handleClick} elevation={3}>
         <CardActionArea className={classes.actionArea}>
           {isOutOfStock && <div className="phone-card-oos">Out of Stock</div>}
-          <CardMedia
-            className={classes.media}
-            image={variants[0].phoneImages[0]}
+          <img
+            src={imageSrc}
             alt={name}
+            width={135}
+            height={160}
             title={name}
+            onError={handleError}
           />
           <CardContent>
             <Typography gutterBottom variant="subtitle1" component="div">

@@ -13,9 +13,35 @@
     width: 25%;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
   }
   &-container.selected {
     border: $red-border;
     font-weight: bold;
+  }
+  &-container.oos {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &-container.oos:before,
+  &-container.oos:after {
+    position: absolute;
+    content: "";
+    background: $red-bt;
+    display: block;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &-container.oos:after {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
   }
 }

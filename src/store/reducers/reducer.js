@@ -5,6 +5,7 @@ export const INITIAL_STATE = {
     Brand: [],
     "Operation System": [],
   },
+  phonesJson: [],
   page: 1,
 };
 
@@ -14,6 +15,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         filters: { ...action.filters },
+      };
+    case actions.SET_PHONES_JSON:
+      return {
+        ...state,
+        phonesJson: { ...action.phonesJson },
       };
     case actions.SET_PAGE:
       return {

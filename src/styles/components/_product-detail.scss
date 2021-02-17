@@ -11,6 +11,10 @@
     font-size: $l-size;
     margin: $m-size 0;
   }
+  &-summary {
+    margin: $m-size 0;
+    text-align: justify;
+  }
   &-top {
     display: flex;
     height: 60vh;
@@ -18,5 +22,18 @@
     &-outer {
       width: 100%;
     }
+  }
+  &-bottom {
+    margin: $m-size 0;
+    padding: $m-size;
+  }
+  &-selected {
+    background: $medium-grey;
+    color: $white;
+    display: flex;
+    font-size: $large1-font-size;
+    justify-content: space-around;
+    margin: $m-size 0;
+    padding: $m-size;
   }
 }

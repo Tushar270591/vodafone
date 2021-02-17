@@ -22,12 +22,12 @@ const PhoneImages = (props) => {
               changeImage(i);
             }}
           >
-            <img alt="test" src={img} />
+            <img alt="NA" src={img} />
           </div>
         ))}
       </div>
       <div className="phone-images-big">
-        <img alt="test" src={selectedImage} />
+        <img alt="NA" src={selectedImage} />
       </div>
     </div>
   );
