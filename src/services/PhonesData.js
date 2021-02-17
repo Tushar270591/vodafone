@@ -29,6 +29,7 @@ const PhonesData = {
         let isFiltered = false;
         product.specifications.forEach((spec) => {
           if (spec.name === "Brand") {
+            //not the best idea to hardcode. can be optimised
             isFiltered =
               filterParams["Brand"].length === 0 ||
               filterParams["Brand"].indexOf(spec.value) !== -1;
@@ -40,6 +41,7 @@ const PhonesData = {
         let isFiltered = false;
         product.specifications.forEach((spec) => {
           if (spec.name === "Operation System") {
+            //not the best idea to hardcode. can be optimised
             isFiltered =
               filterParams["Operation System"].length === 0 ||
               filterParams["Operation System"].indexOf(spec.value) !== -1;
